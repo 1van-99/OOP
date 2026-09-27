@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 4.0)
+project(lab_intro)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(lab_intro main.cpp
+        WordCounter.h
+        WordCounter.cpp
+        TextReader.h
+        CsvWriter.cpp
+        CsvWriter.h
+        Word.h)
