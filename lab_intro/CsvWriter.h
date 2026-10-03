@@ -1,5 +1,4 @@
-#ifndef LAB_INTRO_CSVWRITER_H
-#define LAB_INTRO_CSVWRITER_H
+#pragma once
 
 #include <string>
 #include <list>
@@ -15,5 +14,3 @@ public:
     }
     void write_word_freq(const std::list<Word> &list, int total_words);
 };
-
-#endif //LAB_INTRO_CSVWRITER_H

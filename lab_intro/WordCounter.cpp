@@ -1,10 +1,10 @@
 #include "WordCounter.h"
+#include <cctype>
 
-bool WordCounter::compare_words(const Word &a, const Word &b) {
-    if (a.count != b.count) {
-        return a.count > b.count;
+namespace {
+    bool is_word_char(unsigned char c) {
+        return std::isalnum(c) != 0;
     }
-    return a.word < b.word;
 }
 
 void WordCounter::process_line(const std::string &line) {
@@ -29,11 +29,13 @@ void WordCounter::process_line(const std::string &line) {
 std::list<Word> WordCounter::build_sorted_list() const {
     std::list<Word> sorted_list;
     for (const auto &pair: freq_) {
-        Word word;
-        word.word = pair.first;
-        word.count = pair.second;
-        sorted_list.push_back(word);
+        sorted_list.push_back(Word{pair.first, pair.second});
     }
-    sorted_list.sort(compare_words);
+    sorted_list.sort([](const Word &a, const Word &b) {
+        if (a.count != b.count) {
+            return (a.count > b.count);
+        }
+        return a.word < b.word;
+    });
     return sorted_list;
 }

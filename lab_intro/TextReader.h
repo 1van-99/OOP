@@ -1,5 +1,4 @@
-#ifndef LAB_INTRO_TEXTREADER_H
-#define LAB_INTRO_TEXTREADER_H
+#pragma once
 
 #include <string>
 #include <fstream>
@@ -15,5 +14,3 @@ public:
         return static_cast<bool>(std::getline(file_, line));
     }
 };
-
-#endif //LAB_INTRO_TEXTREADER_H

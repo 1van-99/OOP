@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
         std::cout << "can't open output file\n";
         return 0;
     }
-    writer.write_word_freq(counter.build_sorted_list(), counter.total());
+    writer.write_word_freq(counter.build_sorted_list(), counter.get_total());
 
     return 0;
 }
