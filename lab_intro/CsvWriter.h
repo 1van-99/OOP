@@ -9,8 +9,8 @@ class CsvWriter {
     std::ofstream file_;
 public:
     explicit CsvWriter(const std::string &name) : file_(name){};
-    bool is_open() const {
+    bool isOpen() const {
         return file_.is_open();
     }
-    void write_word_freq(const std::list<Word> &list, int total_words);
+    void writeWordFreq(const std::list<Word> &list, int totalWords);
 };

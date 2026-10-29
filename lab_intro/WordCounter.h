@@ -8,10 +8,15 @@
 class WordCounter {
     std::map<std::string, int> freq_;
     int total_words_ = 0;
+
 public:
-    void process_line(const std::string &line);
-    std::list<Word> build_sorted_list() const;
-    int get_total() const {
+    void processLine(const std::string &line);
+
+    //[[nodiscard]] - компилятор выдаст ошибку если вызвать без использования результата.
+    [[nodiscard]] std::list<Word> buildSortedList() const;
+
+
+    [[nodiscard]] int getTotal() const {
         return total_words_;
     }
 };
